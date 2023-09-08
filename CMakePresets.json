@@ -38,8 +38,7 @@
             "cacheVariables": {
                 "EM_TOOLCHAIN": "Clang",
                 "CMAKE_C_COMPILER": "clang",
-                "CMAKE_CXX_COMPILER": "clang++",
-                "CMAKE_ASM_COMPILER": "clang"
+                "CMAKE_CXX_COMPILER": "clang++"
             },
             "inherits": [
                 "gen-ninja"
@@ -51,8 +50,7 @@
             "cacheVariables": {
                 "EM_TOOLCHAIN": "GCC",
                 "CMAKE_C_COMPILER": "gcc",
-                "CMAKE_CXX_COMPILER": "g++",
-                "CMAKE_ASM_COMPILER": "gcc"
+                "CMAKE_CXX_COMPILER": "g++"
             },
             "inherits": [
                 "gen-ninja"
