@@ -1,0 +1,24 @@
+// url names start relative to the root path of "index.scss"
+
+@font-face {
+    font-family: Lato;
+    src: url(./Assets/Fonts/Lato/Lato-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: LatoBold;
+    src: url(./Assets/Fonts/Lato/Lato-Bold.ttf) format("truetype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: LatoItalic;
+    src: url(./Assets/Fonts/Lato/Lato-Italic.ttf) format("truetype");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: LatoBlack;
+    src: url(./Assets/Fonts/Lato/Lato-Black.ttf) format("truetype");
+    font-weight: bolder;
+}
