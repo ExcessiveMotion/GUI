@@ -1,6 +1,7 @@
 {
   "name": "excessive-motion-gui",
   "main": "index.js",
+  "packageManager": "pnpm@8.7.4",
   "scripts": {
     "watch": "webpack --watch",
     "start": "webpack serve --open --mode development",
