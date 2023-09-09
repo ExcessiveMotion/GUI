@@ -19,7 +19,7 @@ The **Frontend** and **CEF App** projects are set up to work from the root repor
 
 ```sh
 corepack enable
-corepack prepare pnpm@latest
+corepack prepare
 ```
 
 ### Development

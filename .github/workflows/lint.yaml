@@ -15,7 +15,8 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - run: corepack activate
+      - run: corepack enable
+      - run: corepack prepare
       - run: pnpm install
 
       - run: pnpm lint
