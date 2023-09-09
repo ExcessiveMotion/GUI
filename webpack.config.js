@@ -1,59 +1,60 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 // const CopyPlugin = require("copy-webpack-plugin")
-const TerserPlugin = require('terser-webpack-plugin')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
+const TerserPlugin = require("terser-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 // TODO: set up webpack env definitions to select more specific build types
 
 module.exports = (env, argv) => {
-    const IS_PRODUCTION = argv.mode == "production"
+    const IS_PRODUCTION = argv.mode == "production";
     const exp = {
         mode: argv.mode, // --mode production/development
-        entry: './Frontend/src/index.ts',
+        entry: "./Frontend/src/index.ts",
         module: {
             rules: [
                 {
                     test: /\.tsx?$/,
-                    loader: 'ts-loader',
+                    loader: "ts-loader",
                     exclude: /node_modules/,
                 },
                 {
                     test: /\.s[ac]ss$/i,
                     use: [
                         MiniCssExtractPlugin.loader,
-                        'css-loader',
+                        "css-loader",
                         {
-                            loader: 'sass-loader', options: { sourceMap: IS_PRODUCTION }
-                        }
+                            loader: "sass-loader",
+                            options: { sourceMap: IS_PRODUCTION },
+                        },
                     ],
                 },
                 {
                     test: /\.(jpe?g|png|gif|eot|svg|ico|webp)(\?[a-z0-9=.]+)?$/,
-                    loader: 'file-loader',
+                    loader: "file-loader",
                     options: {
-                        name: "[path][name].[contenthash:8].[ext]"
-                    }
+                        name: "[path][name].[contenthash:8].[ext]",
+                    },
                 },
                 {
                     test: /\.ttf$/i,
-                    type: 'asset/resource',
-                    dependency: { not: ['url'] },
+                    type: "asset/resource",
+                    dependency: { not: ["url"] },
                 },
                 {
                     test: /\.[tj]sx?$/,
-                    enforce: 'pre',
-                    use: ['source-map-loader'],
+                    enforce: "pre",
+                    use: ["source-map-loader"],
                 },
             ],
         },
         devServer: {
-            watchFiles: ['src/**.*'],
+            watchFiles: ["src/**.*"],
             hot: true,
             historyApiFallback: true,
             headers: {
-                'Access-Control-Allow-Origin': '*',
+                "Access-Control-Allow-Origin": "*",
             },
         },
         plugins: [
@@ -72,19 +73,21 @@ module.exports = (env, argv) => {
             //         { from: "./Frontend/src/static" },
             //     ],
             // }),
-            new MiniCssExtractPlugin,
+            new MiniCssExtractPlugin(),
         ],
         resolve: {
-            extensions: ['.tsx', '.ts', '.js'],
+            extensions: [".tsx", ".ts", ".js"],
         },
         entry: {
-            main: path.resolve(__dirname, "./Frontend/src/index.ts")
+            main: path.resolve(__dirname, "./Frontend/src/index.ts"),
         },
         output: {
-            path: path.resolve(__dirname, './build/frontend/'),
-            filename: IS_PRODUCTION ? '[name].[contenthash:8].js' : "main.js",
+            path: path.resolve(__dirname, "./build/frontend/"),
+            filename: IS_PRODUCTION ? "[name].[contenthash:8].js" : "main.js",
             clean: true, // clean dist folder before build
-            assetModuleFilename: IS_PRODUCTION ? "[contenthash:16][ext][query]" : "assets/[name][ext][query]",
+            assetModuleFilename: IS_PRODUCTION
+                ? "[contenthash:16][ext][query]"
+                : "assets/[name][ext][query]",
         },
         optimization: {
             mergeDuplicateChunks: IS_PRODUCTION,
@@ -102,8 +105,8 @@ module.exports = (env, argv) => {
                         mangle: {
                             properties: {
                                 keep_quoted: true,
-                            }
-                        }
+                            },
+                        },
                     },
                 }),
                 new CssMinimizerPlugin(),
@@ -113,9 +116,9 @@ module.exports = (env, argv) => {
         performance: {
             hints: false,
             maxEntrypointSize: 512000,
-            maxAssetSize: 512000
-        }
-    }
+            maxAssetSize: 512000,
+        },
+    };
 
-    return exp
-}
+    return exp;
+};

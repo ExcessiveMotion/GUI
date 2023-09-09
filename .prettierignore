@@ -1,0 +1,5 @@
+# Ignore artifacts
+build
+
+# Ignore lockfile
+pnpm-lock.yaml
