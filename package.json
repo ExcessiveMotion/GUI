@@ -9,7 +9,7 @@
         "build": "webpack --mode development",
         "dist": "webpack --mode production",
         "lint": "eslint Frontend",
-        "format": "prettier -w ."
+        "format": "prettier --write ."
     },
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^6.6.0",
