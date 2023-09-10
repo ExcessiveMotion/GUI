@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "name": "Run CEF App (Linux)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/CEF_App",
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/build",
+            "environment": [],
+            "externalConsole": true,
+        },
+    ]
+}
