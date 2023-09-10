@@ -39,7 +39,7 @@ Available build presets:
 - ```debug-linux-gcc```
 - ```release-linux-gcc```
 
->None of the configurations contain Linux specific settings, but the targer system is Linux, so "linux" is added to the configuration/build output path.
+>None of the configurations contain Linux specific settings, but the target system is Linux, so "linux" is added to the configuration/build output path.
 
 ##### CMake Build
 1. Run ```cmake --build ./build/<preset_name> --target all``` (optionally add the ```-j<n>``` flag, where ```<n>``` is the number of parallel build jobs)
