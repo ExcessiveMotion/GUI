@@ -1,0 +1,96 @@
+{
+    "version": 2,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 24,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "common",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            }
+        },
+        {
+            "name": "gen-ninja",
+            "hidden": true,
+            "generator": "Ninja"
+        },
+        {
+            "name": "debug",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "release",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "toolchain-clang",
+            "hidden": true,
+            "cacheVariables": {
+                "EM_TOOLCHAIN": "Clang",
+                "CMAKE_C_COMPILER": "clang",
+                "CMAKE_CXX_COMPILER": "clang++"
+            },
+            "inherits": [
+                "gen-ninja"
+            ]
+        },
+        {
+            "name": "toolchain-gcc",
+            "hidden": true,
+            "cacheVariables": {
+                "EM_TOOLCHAIN": "GCC",
+                "CMAKE_C_COMPILER": "gcc",
+                "CMAKE_CXX_COMPILER": "g++"
+            },
+            "inherits": [
+                "gen-ninja"
+            ]
+        },
+        {
+            "name": "debug-linux-clang",
+            "binaryDir": "${sourceDir}/build/debug-linux-clang",
+            "inherits": [
+                "common",
+                "toolchain-clang",
+                "debug"
+            ]
+        },
+        {
+            "name": "release-linux-clang",
+            "binaryDir": "${sourceDir}/build/release-linux-clang",
+            "inherits": [
+                "common",
+                "toolchain-clang",
+                "release"
+            ]
+        },
+        {
+            "name": "debug-linux-gcc",
+            "binaryDir": "${sourceDir}/build/debug-linux-gcc",
+            "inherits": [
+                "common",
+                "toolchain-gcc",
+                "debug"
+            ]
+        },
+        {
+            "name": "release-linux-gcc",
+            "binaryDir": "${sourceDir}/build/release-linux-gcc",
+            "inherits": [
+                "common",
+                "toolchain-gcc",
+                "release"
+            ]
+        }
+    ]
+}
