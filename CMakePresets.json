@@ -40,9 +40,7 @@
                 "CMAKE_C_COMPILER": "clang",
                 "CMAKE_CXX_COMPILER": "clang++"
             },
-            "inherits": [
-                "gen-ninja"
-            ]
+            "inherits": ["gen-ninja"]
         },
         {
             "name": "toolchain-gcc",
@@ -52,45 +50,27 @@
                 "CMAKE_C_COMPILER": "gcc",
                 "CMAKE_CXX_COMPILER": "g++"
             },
-            "inherits": [
-                "gen-ninja"
-            ]
+            "inherits": ["gen-ninja"]
         },
         {
             "name": "debug-linux-clang",
             "binaryDir": "${sourceDir}/build/debug-linux-clang",
-            "inherits": [
-                "common",
-                "toolchain-clang",
-                "debug"
-            ]
+            "inherits": ["common", "toolchain-clang", "debug"]
         },
         {
             "name": "release-linux-clang",
             "binaryDir": "${sourceDir}/build/release-linux-clang",
-            "inherits": [
-                "common",
-                "toolchain-clang",
-                "release"
-            ]
+            "inherits": ["common", "toolchain-clang", "release"]
         },
         {
             "name": "debug-linux-gcc",
             "binaryDir": "${sourceDir}/build/debug-linux-gcc",
-            "inherits": [
-                "common",
-                "toolchain-gcc",
-                "debug"
-            ]
+            "inherits": ["common", "toolchain-gcc", "debug"]
         },
         {
             "name": "release-linux-gcc",
             "binaryDir": "${sourceDir}/build/release-linux-gcc",
-            "inherits": [
-                "common",
-                "toolchain-gcc",
-                "release"
-            ]
+            "inherits": ["common", "toolchain-gcc", "release"]
         }
     ]
 }
