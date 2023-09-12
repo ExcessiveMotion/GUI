@@ -44,7 +44,8 @@ Before committing, run `pnpm format` to format your code and `pnpm lint` to chec
 
 ### Development
 
-Run `clang-format **/*.cpp` to format your code before committing.
+Run `clang-format **/*.cpp` to format your code before committing.\
+All C++ source/header files must use `.hpp` and `.cpp` file extensions.
 
 ### Build Requirements
 
