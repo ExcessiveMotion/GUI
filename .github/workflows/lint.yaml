@@ -1,0 +1,23 @@
+name: Lint
+
+on: [push]
+
+env:
+  NODE_VERSION: 20
+
+jobs:
+  linting:
+    name: Linting
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - run: corepack enable
+      - run: corepack prepare
+      - run: pnpm install
+
+      - run: pnpm lint
+      - run: pnpm prettier --check .
