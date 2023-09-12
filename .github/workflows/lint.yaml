@@ -27,6 +27,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: sudo apt-get install clang-format
+      - run: ls -a
+      - run: pwd
       - run: |
           chmod +x ./.github/scripts/clang-format-check-recursive.sh
           ./.github/scripts/clang-format-check-recursive.sh
