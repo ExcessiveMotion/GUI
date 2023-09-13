@@ -28,5 +28,5 @@ jobs:
       - uses: actions/checkout@v3
       - run: sudo apt-get install clang-format
       - run: |
-          chmod +x ./.github/scripts/clang-format-check-all.sh
-          ./.github/scripts/clang-format-check-all.sh
+          chmod +x ./clang-format-all.sh
+          ./clang-format-all.sh --dry-run

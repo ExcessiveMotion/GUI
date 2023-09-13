@@ -1,7 +1,8 @@
 #!/bin/bash
 
 THIS_PATH="$(realpath "$0")"
-THIS_DIR="$(dirname "$THIS_PATH")"/CEF_App/src/
-FILE_LIST="$(find "$THIS_DIR" | grep -E ".*(\.cpp|\.hpp)$")"
+THIS_DIR="$(dirname "$THIS_PATH")/CEF_App/src/"
 
-clang-format -i --style=file --Werror $FILE_LIST
+shopt -s globstar # enables **
+shopt -s nullglob # a non-matching glob expands to nothing rather than erroring
+clang-format -i --style=file --Werror "$THIS_DIR"/**/*.cpp "$THIS_DIR"/**/*.hpp $@
