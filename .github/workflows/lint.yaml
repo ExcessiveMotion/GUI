@@ -21,3 +21,12 @@ jobs:
 
       - run: pnpm lint
       - run: pnpm prettier --check .
+  clang-format-check:
+    name: clang-format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: sudo apt-get install clang-format
+      - run: |
+          chmod +x ./clang-format-all.sh
+          ./clang-format-all.sh --dry-run
