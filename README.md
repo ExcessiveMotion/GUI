@@ -9,7 +9,7 @@ This repository contains the default Excessive Motion UI frontend and a minimal 
 - TODO: this (Webpack, TypeScript, ...)
   The **Frontend** and **CEF App** projects are set up to work from the root reporitory directory, so no directory changes are required to build/run both.
 
-## Frontend [Webpack/TypeScript]
+## Frontend [Svelte/TypeScript/Vite]
 
 ### Build requirements
 
@@ -33,12 +33,13 @@ This repository contains the default Excessive Motion UI frontend and a minimal 
 
 When starting and/or after pulling new changes, run `pnpm install` to ensure the correct dependencies are installed.
 
-- Run `pnpm start` to start a live development server.
-- Run `pnpm build` to build the UI in development mode.
-- Run `pnpm dist` to build the UI in production mode.
-  > Build files are written to `./build/frontend/`
+- Run `pnpm dev` to start a live development server.
+- Run `pnpm build` to build the UI in production mode.
+- Run `pnpm preview` to start a local server hosting the UI built with `pnpm build`.
+  > Build files are written to `.svelte-kit/output/`
 
 Before committing, run `pnpm format` to format your code and `pnpm lint` to check it with ESLint.
+Run `pnpm typecheck` to check Typescript types. All three of these checks are also run in CI.
 
 ## CEF App [CMake/C++]
 
