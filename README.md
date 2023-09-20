@@ -6,8 +6,24 @@ This repository contains the default Excessive Motion UI frontend and a minimal 
 
 ### Project Structure
 
-- TODO: this (Webpack, TypeScript, ...)
-  The **Frontend** and **CEF App** projects are set up to work from the root reporitory directory, so no directory changes are required to build/run both.
+<!-- generated using the `tree` command -->
+
+```
+src -
+├── app.d.ts
+├── app.html
+├── index.test.ts
+├── lib - library of custom Svelte components
+│   ├── assets - non-code assets for the website, mostly visual things but could include audio etc.
+│   │   ├── Fonts - Any custom fonts that the website will include
+│   │   └── Images - Any vector or bitmap images that the website will include
+│   └── index.ts
+├── routes - Svelte routing components
+└── stories - Storybook.js stories for each component
+static - Content that should be added to the GUI bundle as-is, eg a favicon.  Not much will end up here.
+CEF_App - The CEF app codebase
+└── src - C++ code for the CEF app
+```
 
 ## Frontend [Svelte/TypeScript/Vite]
 
