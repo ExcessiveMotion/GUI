@@ -13,7 +13,7 @@
 
 
 <style lang="scss">
-@import "./assets/Fonts/Lato.scss";
+@import "../assets/Fonts/Lato.scss";
 
 :root {
     font-family: Lato;

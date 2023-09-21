@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/svelte";
 
-import Animation from "$lib/Animation.svelte";
+import Animation from "$lib/components/Animation.svelte";
 
 const meta = {
     title: "Example/Animation",
