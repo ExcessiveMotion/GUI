@@ -1,11 +1,26 @@
-@import "./Assets/Fonts/Lato.scss";
+<script lang="ts">
+    import Logo from "./assets/Images/EM.svg?component";
+</script>
+
+<div class="background">
+    <div class="em-test">
+        <div>
+            <Logo class="sweep" />
+        </div>
+        <span>Excessive Motion</span>
+    </div>
+</div>
+
+
+<style lang="scss">
+@import "../assets/Fonts/Lato.scss";
 
 :root {
     font-family: Lato;
     font-size: 16pt; // base font size
 }
 
-body {
+:global(body) {
     margin: 0;
     padding: 0;
 
@@ -13,15 +28,6 @@ body {
     color: #fff; // default text color
 
     font-size: 1rem;
-}
-
-// Do not allow drag selection of text/images
-.noselect {
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: -moz-none;
-    -o-user-select: none;
-    user-select: none;
 }
 
 .em-test {
@@ -35,13 +41,14 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #141414;
 
     div {
         position: relative;
         width: 14rem;
         height: 14rem;
 
-        svg {
+        :global(svg) {
             position: absolute;
             top: 0;
             left: 0;
@@ -51,13 +58,13 @@ body {
             padding: 0.15rem;
             box-sizing: border-box;
 
-            path {
+            :global(path) {
                 fill: rgb(64, 64, 64) !important;
             }
         }
 
-        .sweep {
-            path {
+        :global(.sweep) {
+            :global(path) {
                 fill: rgb(255, 140, 0) !important;
             }
 
@@ -89,3 +96,4 @@ body {
         clip-path: polygon(125% 0%, 125% 0%, 100% 100%, 100% 100%);
     }
 }
+</style>

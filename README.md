@@ -6,10 +6,26 @@ This repository contains the default Excessive Motion UI frontend and a minimal 
 
 ### Project Structure
 
-- TODO: this (Webpack, TypeScript, ...)
-  The **Frontend** and **CEF App** projects are set up to work from the root reporitory directory, so no directory changes are required to build/run both.
+<!-- generated using the `tree` command -->
 
-## Frontend [Webpack/TypeScript]
+```
+src -
+├── app.d.ts
+├── app.html
+├── index.test.ts
+├── lib - library of custom Svelte components
+│   ├── assets - non-code assets for the website, mostly visual things but could include audio etc.
+│   │   ├── Fonts - Any custom fonts that the website will include
+│   │   └── Images - Any vector or bitmap images that the website will include
+│   └── index.ts
+├── routes - Svelte routing components
+└── stories - Storybook.js stories for each component
+static - Content that should be added to the GUI bundle as-is, eg a favicon.  Not much will end up here.
+CEF_App - The CEF app codebase
+└── src - C++ code for the CEF app
+```
+
+## Frontend [Svelte/TypeScript/Vite]
 
 ### Build requirements
 
@@ -33,12 +49,13 @@ This repository contains the default Excessive Motion UI frontend and a minimal 
 
 When starting and/or after pulling new changes, run `pnpm install` to ensure the correct dependencies are installed.
 
-- Run `pnpm start` to start a live development server.
-- Run `pnpm build` to build the UI in development mode.
-- Run `pnpm dist` to build the UI in production mode.
-  > Build files are written to `./build/frontend/`
+- Run `pnpm dev` to start a live development server.
+- Run `pnpm build` to build the UI in production mode.
+- Run `pnpm preview` to start a local server hosting the UI built with `pnpm build`.
+  > Build files are written to `.svelte-kit/output/`
 
 Before committing, run `pnpm format` to format your code and `pnpm lint` to check it with ESLint.
+Run `pnpm typecheck` to check Typescript types. All three of these checks are also run in CI.
 
 ## CEF App [CMake/C++]
 
